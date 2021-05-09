@@ -12,6 +12,11 @@ class App extends Component {
       SelectedDay: e.target.value
     });
   };
+  handleSelectedDayClick = SelectedDay => {
+    this.setState({
+      SelectedDay
+    });
+  };
   render() {
     return (
       <div className="App">
@@ -24,6 +29,7 @@ class App extends Component {
               <List
                 WeatherAppContents={WeatherAppContents}
                 SelectedDay={this.state.SelectedDay}
+                handleSelectedDayClick={this.handleSelectedDayClick}
               />
             </div>
             <div className="col-8">

@@ -1,13 +1,13 @@
 import React from "react";
 import { DaysAgo, WeekDays } from "../../constants/Dates";
 
-const ListItem = ({ CurDate, Selected }) => {
+const ListItem = ({ CurDate, Selected, handleSelectedDayClick, index }) => {
   const today = new Date().getDate();
   return (
-    <a
-      href="#"
+    <span
+      onClick={() => handleSelectedDayClick(index)}
       className={
-        "list-group-item list-group-item-action" +
+        "ListItem list-group-item list-group-item-action" +
         (CurDate === today ? " list-group-item-success" : "") +
         (Selected ? " active" : "")
       }
@@ -25,7 +25,7 @@ const ListItem = ({ CurDate, Selected }) => {
         }
       </p>
       <small>And some small print.</small>
-    </a>
+    </span>
   );
 };
 
