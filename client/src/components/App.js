@@ -5,7 +5,12 @@ import { WeatherAppContents } from "../constants/Dates";
 
 class App extends Component {
   state = {
-    SelectedDay: null
+    SelectedDay: -1
+  };
+  handleSelectedDayChange = e => {
+    this.setState({
+      SelectedDay: e.target.value
+    });
   };
   render() {
     return (
@@ -20,6 +25,28 @@ class App extends Component {
                 WeatherAppContents={WeatherAppContents}
                 SelectedDay={this.state.SelectedDay}
               />
+            </div>
+            <div className="col-8">
+              <form action="">
+                <div className="form-group">
+                  <label htmlFor="daySelect">Select a Day</label>
+                  <select
+                    className="form-control"
+                    id="daySelect"
+                    value={this.state.SelectedDay}
+                    onChange={this.handleSelectedDayChange}
+                  >
+                    <option value="-1" disabled={true}>
+                      Please Select...
+                    </option>
+                    {WeatherAppContents.map((date, key) => (
+                      <option value={key} key={key}>
+                        May {date.Date}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+              </form>
             </div>
           </div>
         </div>
