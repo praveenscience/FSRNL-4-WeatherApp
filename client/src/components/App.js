@@ -4,6 +4,9 @@ import List from "./DateList/List";
 import { WeatherAppContents } from "../constants/Dates";
 
 class App extends Component {
+  state = {
+    SelectedDay: null
+  };
   render() {
     return (
       <div className="App">
@@ -13,7 +16,10 @@ class App extends Component {
         <div className="container mt-4">
           <div className="row">
             <div className="col-4">
-              <List WeatherAppContents={WeatherAppContents} />
+              <List
+                WeatherAppContents={WeatherAppContents}
+                SelectedDay={this.state.SelectedDay}
+              />
             </div>
           </div>
         </div>
