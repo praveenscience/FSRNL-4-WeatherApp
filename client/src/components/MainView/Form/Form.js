@@ -1,6 +1,6 @@
 import React from "react";
 
-const Form = ({ SelectedDay, WeatherAppContents }) => {
+const Form = ({ SelectedDay, WeatherAppContents, history }) => {
   return (
     <form>
       <div className="form-group">
@@ -9,7 +9,9 @@ const Form = ({ SelectedDay, WeatherAppContents }) => {
           className="form-control"
           id="daySelect"
           value={SelectedDay}
-          onChange={null}
+          onChange={e => {
+            history.push("/" + e.target.value);
+          }}
         >
           <option value="-1" disabled={true}>
             Please Select...

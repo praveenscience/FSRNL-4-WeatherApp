@@ -31,6 +31,7 @@ const App = () => {
                   SelectedDay={
                     rp.match.params.dateId ? rp.match.params.dateId : -1
                   }
+                  history={rp.history}
                   WeatherAppContents={WeatherAppContents}
                 />
               )}
