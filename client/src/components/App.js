@@ -3,6 +3,7 @@ import Navbar from "./Bootstrap/Navbar";
 import List from "./DateList/List";
 import { WeatherAppContents } from "../constants/Dates";
 import Form from "./MainView/Form/Form";
+import Sadaf from "./Sadaf";
 
 class App extends Component {
   state = {
@@ -37,6 +38,7 @@ class App extends Component {
                 handleSelectedDayChange={this.handleSelectedDayChange}
                 WeatherAppContents={WeatherAppContents}
               />
+              <Sadaf />
             </div>
           </div>
         </div>
