@@ -10,31 +10,31 @@ export const WeekDays = [
 
 export const WeatherAppContents = [
   {
-    Date: 5
+    Date: 5 + 7
   },
   {
-    Date: 6
+    Date: 6 + 7
   },
   {
-    Date: 7
+    Date: 7 + 7
   },
   {
-    Date: 8
+    Date: 8 + 7
   },
   {
-    Date: 9
+    Date: 9 + 7
   },
   {
-    Date: 10
+    Date: 10 + 7
   },
   {
-    Date: 11
+    Date: 11 + 7
   },
   {
-    Date: 12
+    Date: 12 + 7
   },
   {
-    Date: 13
+    Date: 13 + 7
   }
 ];
 
