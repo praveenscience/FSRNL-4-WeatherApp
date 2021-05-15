@@ -1,6 +1,6 @@
 import React from "react";
 
-const Form = ({ SelectedDay, handleSelectedDayChange, WeatherAppContents }) => {
+const Form = ({ SelectedDay, WeatherAppContents }) => {
   return (
     <form>
       <div className="form-group">
@@ -9,7 +9,7 @@ const Form = ({ SelectedDay, handleSelectedDayChange, WeatherAppContents }) => {
           className="form-control"
           id="daySelect"
           value={SelectedDay}
-          onChange={handleSelectedDayChange}
+          onChange={null}
         >
           <option value="-1" disabled={true}>
             Please Select...

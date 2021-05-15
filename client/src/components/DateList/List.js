@@ -1,7 +1,7 @@
 import React from "react";
 import ListItem from "./_ListItem";
 
-const List = ({ WeatherAppContents, SelectedDay, handleSelectedDayClick }) => {
+const List = ({ WeatherAppContents, SelectedDay }) => {
   return (
     <div className="List list-group">
       {WeatherAppContents.map((cur, key) => (
@@ -10,7 +10,6 @@ const List = ({ WeatherAppContents, SelectedDay, handleSelectedDayClick }) => {
           key={key}
           index={key}
           Selected={+SelectedDay === key}
-          handleSelectedDayClick={handleSelectedDayClick}
         />
       ))}
     </div>

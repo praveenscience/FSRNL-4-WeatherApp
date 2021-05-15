@@ -5,11 +5,6 @@ import { WeatherAppContents } from "../constants/Dates";
 import Form from "./MainView/Form/Form";
 
 const App = () => {
-  const SelectedDay = -1;
-  const handleSelectedDayChange = e => handleSelectedDayClick(e.target.value);
-  const handleSelectedDayClick = SelectedDay => {
-    // Do something with Selected Day.
-  };
   return (
     <div className="App">
       <Navbar className="Header justify-content-center" dark={true}>
@@ -24,21 +19,28 @@ const App = () => {
                 <List
                   WeatherAppContents={WeatherAppContents}
                   SelectedDay={rp.match.params.dateId}
-                  handleSelectedDayClick={handleSelectedDayClick}
                 />
               )}
             />
           </div>
           <div className="col-8">
-            <Form
-              SelectedDay={SelectedDay}
-              handleSelectedDayChange={handleSelectedDayChange}
-              WeatherAppContents={WeatherAppContents}
+            <Route
+              path={["/:dateId", "/"]}
+              render={rp => (
+                <Form
+                  SelectedDay={rp.match.params.dateId}
+                  WeatherAppContents={WeatherAppContents}
+                />
+              )}
             />
             <Route
               exact={true}
               path="/"
-              component={() => <p>Hey, please select a date!</p>}
+              render={rp => (
+                <>
+                  <p>Hey, please select a date!</p>
+                </>
+              )}
             />
             <Route
               path="/:dateId"

@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { DaysAgo, WeekDays } from "../../constants/Dates";
 
-const ListItem = ({ CurDate, Selected, handleSelectedDayClick, index }) => {
+const ListItem = ({ CurDate, Selected, index }) => {
   const today = new Date().getDate();
   return (
-    <span
-      onClick={() => handleSelectedDayClick(index)}
+    <Link
+      to={"/" + index}
       className={
         "ListItem list-group-item list-group-item-action" +
         (CurDate === today ? " list-group-item-success" : "") +
@@ -25,7 +26,7 @@ const ListItem = ({ CurDate, Selected, handleSelectedDayClick, index }) => {
         }
       </p>
       <small>And some small print.</small>
-    </span>
+    </Link>
   );
 };
 
