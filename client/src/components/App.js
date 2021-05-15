@@ -9,9 +9,7 @@ class App extends Component {
     SelectedDay: -1
   };
   handleSelectedDayChange = e => {
-    this.setState({
-      SelectedDay: e.target.value
-    });
+    this.handleSelectedDayClick(e.target.value);
   };
   handleSelectedDayClick = SelectedDay => {
     this.setState({
