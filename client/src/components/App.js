@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Navbar from "./Bootstrap/Navbar";
 import List from "./DateList/List";
 import { WeatherAppContents } from "../constants/Dates";
+import Form from "./MainView/Form/Form";
 
 class App extends Component {
   state = {
@@ -33,26 +34,11 @@ class App extends Component {
               />
             </div>
             <div className="col-8">
-              <form action="">
-                <div className="form-group">
-                  <label htmlFor="daySelect">Select a Day</label>
-                  <select
-                    className="form-control"
-                    id="daySelect"
-                    value={this.state.SelectedDay}
-                    onChange={this.handleSelectedDayChange}
-                  >
-                    <option value="-1" disabled={true}>
-                      Please Select...
-                    </option>
-                    {WeatherAppContents.map((date, key) => (
-                      <option value={key} key={key}>
-                        May {date.Date}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-              </form>
+              <Form
+                SelectedDay={this.state.SelectedDay}
+                handleSelectedDayChange={this.handleSelectedDayChange}
+                WeatherAppContents={WeatherAppContents}
+              />
             </div>
           </div>
         </div>
