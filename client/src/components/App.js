@@ -28,7 +28,9 @@ const App = () => {
               path={["/:dateId", "/"]}
               render={rp => (
                 <Form
-                  SelectedDay={rp.match.params.dateId}
+                  SelectedDay={
+                    rp.match.params.dateId ? rp.match.params.dateId : -1
+                  }
                   WeatherAppContents={WeatherAppContents}
                 />
               )}

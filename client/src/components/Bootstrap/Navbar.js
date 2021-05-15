@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ dark, children, className }) => {
   dark = !!dark ? "dark" : "light";
@@ -8,7 +9,9 @@ const Navbar = ({ dark, children, className }) => {
         `navbar navbar-${dark} bg-${dark}` + (className ? " " + className : "")
       }
     >
-      <span className="navbar-brand mb-0 h1">{children}</span>
+      <Link to="/" className="navbar-brand mb-0 h1">
+        {children}
+      </Link>
     </nav>
   );
 };
