@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { DaysAgo, WeekDays } from "../../constants/Dates";
+import { WeekDays } from "../../constants/Dates";
+import { DaysAgo } from "../../helpers/Dates";
 
 const ListItem = ({ CurDate, Selected, index }) => {
   const today = new Date().getDate();
