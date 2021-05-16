@@ -39,7 +39,7 @@ const App = () => {
             <Route
               exact={true}
               path="/"
-              render={rp => (
+              render={() => (
                 <>
                   <p>Hey, please select a date!</p>
                 </>
