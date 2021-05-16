@@ -1,5 +1,5 @@
 import Navbar from "./Bootstrap/Navbar";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import List from "./DateList/List";
 import { WeatherAppContents } from "../constants/Dates";
 import Form from "./MainView/Form/Form";
@@ -36,19 +36,20 @@ const App = () => {
                 />
               )}
             />
-            <Route
-              exact={true}
-              path="/"
-              render={() => (
-                <>
-                  <p>Hey, please select a date!</p>
-                </>
-              )}
-            />
-            <Route
-              path="/:dateId"
-              render={rp => <p>DateID: {rp.match.params.dateId}</p>}
-            />
+            <Switch>
+              <Route
+                path="/:dateId"
+                render={rp => <p>DateID: {rp.match.params.dateId}</p>}
+              />
+              <Route
+                path="/"
+                render={() => (
+                  <>
+                    <p>Hey, please select a date!</p>
+                  </>
+                )}
+              />
+            </Switch>
           </div>
         </div>
       </div>
